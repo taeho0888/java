@@ -1,6 +1,6 @@
-## 기초
+# 기초
 
-### 입력 받기
+## 🎂 입력 받기
 ```java
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -52,9 +52,9 @@ public class Main {
 }
 
 ```
-***
 
-### 출력 하기
+
+## 🎂 출력 하기
 ```java
 import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
