@@ -7,7 +7,6 @@ public class boj_2240 {
     static int T, W;
     static int answer;
     static int[] plumAt;
-    static ArrayDeque<Integer> selected = new ArrayDeque<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,15 +26,10 @@ public class boj_2240 {
         else dp[1][1] = 1;
 
         for (int t = 2; t < T + 1; t++) {
-            // w = 0 )
-            if (plumAt[t] == 1) {
-                dp[t][0] = dp[t-1][0] + 1; 
-            }
-            else {
-                dp[t][0] = dp[t-1][0];
-            }
+            // w가 0인 경우
+            dp[t][0] = dp[t-1][0] + (plumAt[t] == 1 ? 1 : 0); 
 
-            // 1 <= w <= W )
+            // w가 1 ~ W인 경우
             for (int w = 1; w < W + 1; w++) {
                 // 자리를 바꿔야 자두를 먹는 경우
                 if (getPlumWhenSwitch(t, w)) {
